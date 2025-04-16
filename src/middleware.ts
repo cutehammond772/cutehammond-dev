@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { dev, auth } from "@/middlewares";
+import { dev } from "@/middlewares";
 
-const middlewares = [dev, auth];
+const middlewares = [dev];
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
