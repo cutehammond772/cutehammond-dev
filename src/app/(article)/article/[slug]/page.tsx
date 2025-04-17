@@ -6,12 +6,11 @@ import { convertDate } from "@/utils/date";
 import ArticleBody from "./components/ArticleBody";
 
 export interface ArticlePageParams {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({
-  params,
-}: ArticlePageParams): Promise<Metadata> {
+export async function generateMetadata(props: ArticlePageParams): Promise<Metadata> {
+  const params = await props.params;
   return {
     title: decodeURI(params.slug),
   };
@@ -22,7 +21,8 @@ export async function generateStaticParams() {
   return (await list({})).articles.map((title) => ({ slug: title }));
 }
 
-export default async function Page({ params }: ArticlePageParams) {
+export default async function Page(props: ArticlePageParams) {
+  const params = await props.params;
   const title = decodeURI(params.slug);
   const article = await load({ title });
 

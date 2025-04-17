@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useRecoilState } from "recoil";
+import { useAtom } from "jotai";
 import { modalSelector } from "./ModalProvider";
 
 export class ModalProviderNotFoundError extends Error {}
@@ -22,7 +22,7 @@ export default function Modal({
 }) {
   const [isClient, setIsClient] = useState(false);
   const modalKey = useRef<string>("modal-" + Date.now());
-  const [modal, setModal] = useRecoilState(modalSelector(modalKey.current));
+  const [modal, setModal] = useAtom(modalSelector(modalKey.current));
 
   // Client Only
   useEffect(() => {
@@ -30,24 +30,25 @@ export default function Modal({
   }, []);
 
   // Modal Provider에 등록
+  // TODO: Anti-Pattern
   useEffect(() => {
     if (modal) return;
 
-    setModal((prev) => ({ ...prev, hide: false }));
+    setModal({ hide: false });
   }, [modal, setModal]);
 
   const _close = useCallback(() => {
-    setModal((prev) => ({ ...prev, close: true }));
+    setModal({ ...modal, close: true });
     close();
-  }, [setModal, close]);
+  }, [modal, setModal, close]);
 
   const _hide = useCallback(() => {
-    setModal((prev) => ({ ...prev, hide: true }));
-  }, [setModal]);
+    setModal({ ...modal, hide: true });
+  }, [modal, setModal]);
 
   const _show = useCallback(() => {
-    setModal((prev) => ({ ...prev, hide: false }));
-  }, [setModal]);
+    setModal({ ...modal, hide: false });
+  }, [modal, setModal]);
 
   if (!isClient) return null;
 
