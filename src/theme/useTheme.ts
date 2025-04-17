@@ -1,10 +1,10 @@
 import { useCallback } from "react";
-import { useRecoilState } from "recoil";
 import { themeState } from "@/theme/ThemeContainer";
 import { THEMES } from "./theme";
+import { useAtom } from "jotai";
 
 export default function useTheme() {
-  const [theme, setTheme] = useRecoilState(themeState);
+  const [theme, setTheme] = useAtom(themeState);
 
   const toggle = useCallback(() => {
     setTheme((currentTheme) => {

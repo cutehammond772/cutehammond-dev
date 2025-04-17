@@ -1,12 +1,12 @@
 "use client";
 
-import { RecoilRoot } from "recoil";
+import { Provider } from "jotai";
 import ThemeContainer from "@/theme/ThemeContainer";
 
 export default function BlogContainer({ children }: React.PropsWithChildren) {
   return (
-    <RecoilRoot>
+    <Provider>
       <ThemeContainer>{children}</ThemeContainer>
-    </RecoilRoot>
+    </Provider>
   );
 }
