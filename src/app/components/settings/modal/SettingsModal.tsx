@@ -4,7 +4,6 @@ import useModal from "@/modal/useModal";
 import { X } from "react-feather";
 
 import ListRefreshOption from "../option/ListRefreshOption";
-import AuthOption from "../option/AuthOption";
 import { usePathname } from "next/navigation";
 import ArticleRefreshOption from "../option/ArticleRefreshOption";
 
@@ -41,7 +40,6 @@ export default function SettingsModal() {
               article={currentPath.replace("/article/", "")}
             />
           )}
-          <AuthOption />
         </div>
       </div>
     </div>
