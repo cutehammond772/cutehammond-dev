@@ -34,7 +34,7 @@ export default function ModalProvider() {
   return (
     <div
       id="modal"
-      className={`fixed ${available ? "backdrop-blur-sm" : "pointer-events-none"} z-50 h-screen w-screen`}
+      className={`fixed ${available ? "backdrop-blur-xs" : "pointer-events-none"} z-50 h-screen w-screen`}
     />
   );
 }

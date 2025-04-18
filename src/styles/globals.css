@@ -1,64 +1,96 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is([data-theme="Dark"] *));
+
+@theme {
+  --color-charcoal-500: #445158;
+  --color-charcoal-700: #2f3c43;
+  --color-charcoal-900: #262f36;
+
+  --color-beige-100: #d1bfb5;
+  --color-beige-300: #bdaba1;
+  --color-beige-500: #a08e84;
+
+  --color-text-100: #eeeeee;
+  --color-text-300: #cdcdcd;
+  --color-text-500: #787878;
+  --color-text-700: #303030;
+  --color-text-900: #1f1f1f;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility f1-bold {
+  /* Headline 1 */
+  @apply text-[32px] font-bold md:text-[40px];
+}
+
+@utility f1-regular {
+  @apply text-[32px] font-normal md:text-[40px];
+}
+
+@utility f1-thin {
+  @apply text-[32px] font-thin md:text-[40px];
+}
+
+@utility f2-bold {
+  /* Headline 2 */
+  @apply text-[24px] font-bold md:text-[32px];
+}
+
+@utility f2-regular {
+  @apply text-[24px] font-normal md:text-[32px];
+}
+
+@utility f2-thin {
+  @apply text-[24px] font-thin md:text-[32px];
+}
+
+@utility f3-bold {
+  /* Headline 3 */
+  @apply text-[20px] font-bold md:text-[24px];
+}
+
+@utility f3-regular {
+  @apply text-[20px] font-normal md:text-[24px];
+}
+
+@utility f3-thin {
+  @apply text-[20px] font-thin md:text-[24px];
+}
+
+@utility fp-bold {
+  /* Paragraph */
+  @apply text-[16px] font-bold md:text-[20px];
+}
+
+@utility fp-regular {
+  @apply text-[16px] font-normal md:text-[20px];
+}
+
+@utility fp-thin {
+  @apply text-[16px] font-thin md:text-[20px];
+}
 
 @layer base {
   /* blockquote 내부 paragraph의 margin 설정을 무효화시킨다. */
   blockquote > p {
     margin: 0 !important;
-  }
-}
-
-@layer utilities {
-  /* Headline 1 */
-  .f1-bold {
-    @apply text-[32px] font-bold md:text-[40px];
-  }
-
-  .f1-regular {
-    @apply text-[32px] font-normal md:text-[40px];
-  }
-
-  .f1-thin {
-    @apply text-[32px] font-thin md:text-[40px];
-  }
-
-  /* Headline 2 */
-  .f2-bold {
-    @apply text-[24px] font-bold md:text-[32px];
-  }
-
-  .f2-regular {
-    @apply text-[24px] font-normal md:text-[32px];
-  }
-
-  .f2-thin {
-    @apply text-[24px] font-thin md:text-[32px];
-  }
-
-  /* Headline 3 */
-  .f3-bold {
-    @apply text-[20px] font-bold md:text-[24px];
-  }
-
-  .f3-regular {
-    @apply text-[20px] font-normal md:text-[24px];
-  }
-
-  .f3-thin {
-    @apply text-[20px] font-thin md:text-[24px];
-  }
-
-  /* Paragraph */
-  .fp-bold {
-    @apply text-[16px] font-bold md:text-[20px];
-  }
-
-  .fp-regular {
-    @apply text-[16px] font-normal md:text-[20px];
-  }
-
-  .fp-thin {
-    @apply text-[16px] font-thin md:text-[20px];
   }
 }

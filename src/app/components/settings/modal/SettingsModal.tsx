@@ -33,7 +33,7 @@ export default function SettingsModal() {
         </div>
 
         {/* Main Section */}
-        <div className="flex flex-grow flex-col justify-center gap-4">
+        <div className="flex grow flex-col justify-center gap-4">
           {isIndexPage(currentPath) && <ListRefreshOption />}
           {isArticlePage(currentPath) && (
             <ArticleRefreshOption

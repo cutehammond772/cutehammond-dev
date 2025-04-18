@@ -18,7 +18,7 @@ export default function AuthModal() {
         </div>
 
         {/* Main Section */}
-        <div className="flex flex-grow flex-col justify-center gap-4"></div>
+        <div className="flex grow flex-col justify-center gap-4"></div>
       </div>
     </div>
   );
