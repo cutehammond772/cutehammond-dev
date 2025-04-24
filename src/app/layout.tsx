@@ -5,9 +5,9 @@ import { pretendard } from "@/styles/font";
 import "@/styles/globals.css";
 
 import { Home } from "react-feather";
-import ThemeProvider from "./ThemeProvider";
+import ThemeProvider from "./providers/ThemeProvider";
 import ThemeToggle from "@/features/theme/components/ThemeToggle";
-import JotaiProvider from "./JotaiProvider";
+import JotaiProvider from "./providers/JotaiProvider";
 
 export const metadata: Metadata = {
   title: "cutehammond.dev",
