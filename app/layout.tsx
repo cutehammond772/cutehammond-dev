@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { pretendard } from "@/styles/font";
-import "@/styles/globals.css";
+import { pretendard } from "@/app/styles/font";
+import "@/app/styles/globals.css";
 
 import { Home } from "react-feather";
-import ThemeProvider from "./providers/ThemeProvider";
 import ThemeToggle from "@/features/theme/components/ThemeToggle";
-import JotaiProvider from "./providers/JotaiProvider";
+import ThemeProvider from "@/app/providers/ThemeProvider";
+import JotaiProvider from "@/app/providers/JotaiProvider";
 
 export const metadata: Metadata = {
   title: "cutehammond.dev",

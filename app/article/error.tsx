@@ -9,7 +9,7 @@ export default function Error() {
       <div className="f2-bold">페이지를 불러오는 데 실패하였습니다.</div>
       <Link
         href="/"
-        className="fp-regular bg-charcoal-900 px-4 py-2 text-text-100 dark:bg-beige-500 dark:text-text-900"
+        className="fp-regular bg-charcoal-900 text-text-100 dark:bg-beige-500 dark:text-text-900 px-4 py-2"
       >
         메인 화면으로
       </Link>

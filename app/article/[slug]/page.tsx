@@ -3,13 +3,15 @@ import { Metadata } from "next";
 import { list, load } from "@/utils/article/github";
 import { convertDate } from "@/utils/date";
 
-import ArticleBody from "./components/ArticleBody";
+import ArticleBody from "@/features/article/components/ArticleBody";
 
 export interface ArticlePageParams {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata(props: ArticlePageParams): Promise<Metadata> {
+export async function generateMetadata(
+  props: ArticlePageParams
+): Promise<Metadata> {
   const params = await props.params;
   return {
     title: decodeURI(params.slug),
@@ -28,8 +30,8 @@ export default async function Page(props: ArticlePageParams) {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-2 bg-beige-300 px-4 pb-4 pt-48 dark:bg-charcoal-700">
-        <span className="f1-bold break-keep text-center leading-normal md:pb-8">
+      <div className="bg-beige-300 dark:bg-charcoal-700 flex flex-col items-center gap-2 px-4 pt-48 pb-4">
+        <span className="f1-bold text-center leading-normal break-keep md:pb-8">
           {title}
         </span>
         <span className="fp-bold flex flex-row gap-2 text-center">
@@ -42,7 +44,7 @@ export default async function Page(props: ArticlePageParams) {
           {article.tag.map((tag) => (
             <span
               key={tag}
-              className="bg-beige-500 px-2 py-1 dark:bg-charcoal-500"
+              className="bg-beige-500 dark:bg-charcoal-500 px-2 py-1"
             >
               {tag}
             </span>

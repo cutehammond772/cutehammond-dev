@@ -1,12 +1,12 @@
 import { convertDate } from "@/utils/date";
-import { list, load } from "@/utils/article/github";
+import * as GithubArticles from "@/utils/article/github";
+import ArticleCard from "@/features/article/components/ArticleCard";
 
-import ArticleCard from "./components/ArticleCard";
-
-export default async function Page() {
-  // 모든 글을 불러온다.
+export default async function IntroductionPage() {
   const articles = await Promise.all(
-    (await list({})).articles.map((title) => load({ title }))
+    (await GithubArticles.list({})).articles.map((title) =>
+      GithubArticles.load({ title })
+    )
   );
 
   // 날짜 순으로 정렬한다. (가장 늦게 나온 게시글이 먼저 오도록 한다.)
@@ -17,7 +17,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className="f3-bold mb-8 mt-24 px-4 md:mt-48 md:px-0">
+      <div className="f3-bold mt-24 mb-8 px-4 md:mt-48 md:px-0">
         최근 작성된 글
       </div>
       <div className="flex flex-col gap-6">
