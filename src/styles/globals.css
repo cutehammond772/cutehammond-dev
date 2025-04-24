@@ -1,6 +1,6 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@custom-variant dark (&:is([data-theme="Dark"] *));
+@custom-variant dark (&:is([data-theme="dark"] *));
 
 @theme {
   --color-charcoal-500: #445158;

@@ -1916,8 +1916,10 @@ __metadata:
     gray-matter: "npm:^4.0.3"
     jose: "npm:^5.2.3"
     jotai: "npm:^2.12.3"
+    lucide-react: "npm:^0.503.0"
     next: "npm:15.3.0"
     next-mdx-remote: "npm:^4.4.1"
+    next-themes: "npm:^0.4.6"
     octokit: "npm:^3.1.0"
     postcss: "npm:8.4.35"
     prettier: "npm:^3.2.4"
@@ -1927,6 +1929,7 @@ __metadata:
     react-feather: "npm:^2.0.10"
     tailwindcss: "npm:^4.1.4"
     typescript: "npm:5.4.2"
+    zod: "npm:^3.24.3"
   languageName: unknown
   linkType: soft
 
@@ -4252,6 +4255,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.503.0":
+  version: 0.503.0
+  resolution: "lucide-react@npm:0.503.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/97d282acf1a384da690cd973804d11737ebdba744cd11b2a3807a06d407e0f1f975723d9ce4afcb55058e6bd179d77029272cddcc726232339a3fde263b375b4
+  languageName: node
+  linkType: hard
+
 "markdown-extensions@npm:^1.0.0":
   version: 1.1.1
   resolution: "markdown-extensions@npm:1.1.1"
@@ -5346,6 +5358,16 @@ __metadata:
     react: ">=16.x <=18.x"
     react-dom: ">=16.x <=18.x"
   checksum: 10c0/d48ad271f58312d11f392b0fbd7b2dbc5990cc82fcb6d28f687875a52b28b695c0700b93f197c72910a4c73da0a1fe4867db95315bc2ee7f0fc1743279f41b80
+  languageName: node
+  linkType: hard
+
+"next-themes@npm:^0.4.6":
+  version: 0.4.6
+  resolution: "next-themes@npm:0.4.6"
+  peerDependencies:
+    react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+  checksum: 10c0/83590c11d359ce7e4ced14f6ea9dd7a691d5ce6843fe2dc520fc27e29ae1c535118478d03e7f172609c41b1ef1b8da6b8dd2d2acd6cd79cac1abbdbd5b99f2c4
   languageName: node
   linkType: hard
 
@@ -7273,6 +7295,13 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.24.3":
+  version: 3.24.3
+  resolution: "zod@npm:3.24.3"
+  checksum: 10c0/ab0369810968d0329a1a141e9418e01e5c9c2a4905cbb7cb7f5a131d6e9487596e1400e21eeff24c4a8ee28dacfa5bd6103893765c055b7a98c2006a5a4fc68d
   languageName: node
   linkType: hard
 
