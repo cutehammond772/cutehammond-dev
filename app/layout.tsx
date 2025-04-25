@@ -4,7 +4,7 @@ import Link from "next/link";
 import { pretendard } from "@/app/styles/font";
 import "@/app/styles/globals.css";
 
-import { Home } from "react-feather";
+import { Home } from "lucide-react";
 import ThemeToggle from "@/features/theme/components/ThemeToggle";
 import ThemeProvider from "@/app/providers/ThemeProvider";
 import JotaiProvider from "@/app/providers/JotaiProvider";

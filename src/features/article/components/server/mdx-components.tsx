@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { MDXComponents } from "mdx/types";
-import { Paperclip } from "react-feather";
+import { Paperclip } from "lucide-react";
 
 import { Code } from "bright";
 
