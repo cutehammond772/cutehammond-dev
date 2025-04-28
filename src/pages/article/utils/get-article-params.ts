@@ -1,4 +1,4 @@
-import { list } from "@/shared/utils/article/github";
+import { list } from "@/features/article/utils/github";
 import { ArticleParams } from "../types/article-params";
 
 export async function getArticleParams() {

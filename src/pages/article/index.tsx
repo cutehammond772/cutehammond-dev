@@ -1,7 +1,8 @@
-import { load } from "@/shared/utils/article/github";
-import { ArticleParams } from "./types/article-params";
-import { convertDate } from "@/shared/utils/date";
+import { load } from "@/features/article/utils/github";
 import ArticleBody from "@/features/article/components/server/ArticleBody";
+import { convertDate } from "@/shared/utils/date";
+
+import { ArticleParams } from "./types/article-params";
 
 export default async function ArticlePage(props: ArticleParams) {
   const { slug } = await props.params;

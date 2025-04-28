@@ -1,15 +1,3 @@
-/* Article Metadata */
-export interface ArticleMetadata {
-  tag: string[];
-  createdDate: string;
-  modifiedDate: string;
-}
-
-export function isMetadata(target: any): target is ArticleMetadata {
-  return "tag" in target && "createdDate" in target && "modifiedDate" in target;
-}
-
-/* Article Source */
 export function generateArticleSource(source: string) {
   return {
     ARTICLE_SOURCE: source,
@@ -18,6 +6,17 @@ export function generateArticleSource(source: string) {
     ARTICLE_TAG: (article: string) =>
       `${source}_ARTICLE_[${encodeURI(article)}]`,
   };
+}
+
+export function isMetadata(target: any): target is ArticleMetadata {
+  return "tag" in target && "createdDate" in target && "modifiedDate" in target;
+}
+
+/* Article Metadata */
+export interface ArticleMetadata {
+  tag: string[];
+  createdDate: string;
+  modifiedDate: string;
 }
 
 /* Request & Response */
@@ -37,7 +36,6 @@ export type ArticleResponse = {
   markdown: string;
 } & ArticleMetadata;
 
-/* Load Functions */
 export type ArticleListLoader = (
   request: ArticleListRequest
 ) => Promise<ArticleListResponse>;

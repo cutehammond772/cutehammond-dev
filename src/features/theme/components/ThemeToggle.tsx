@@ -4,7 +4,7 @@ import * as z from "zod";
 import { useMemo } from "react";
 import { useTheme } from "next-themes";
 import { Airplay, Moon, Sun } from "lucide-react";
-import { ClientOnly } from "@/shared/utils/components/ClientOnly";
+import { ClientOnly } from "@/shared/components/ClientOnly";
 
 export default function ThemeToggle() {
   const { theme: nativeTheme, setTheme } = useTheme();

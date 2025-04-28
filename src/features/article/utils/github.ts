@@ -8,7 +8,7 @@ import {
   ArticleLoader,
   generateArticleSource,
   isMetadata,
-} from ".";
+} from "./metadata";
 
 import {
   ArticleDirectoryNotFoundError,
@@ -16,8 +16,8 @@ import {
   ArticleNotFoundError,
   InvalidArticleDirectoryError,
   InvalidArticleError,
-} from "./error";
-import { fetchWith } from "../server";
+} from "../error";
+import fetcher from "@/shared/utils/fetcher";
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
@@ -44,7 +44,7 @@ export const list: ArticleListLoader = cache(async ({ draft }) => {
       path: userData.path,
       ref: draft ? "draft" : undefined,
       request: {
-        fetch: fetchWith(source.LIST_TAG),
+        fetch: fetcher(source.LIST_TAG),
       },
     });
 
@@ -77,7 +77,7 @@ export const load: ArticleLoader = cache(async ({ title, draft }) => {
       repo: userData.repository,
       ref: draft ? "draft" : undefined,
       request: {
-        fetch: fetchWith(source.ARTICLE_GROUP, source.ARTICLE_TAG(title)),
+        fetch: fetcher(source.ARTICLE_GROUP, source.ARTICLE_TAG(title)),
       },
     });
 

@@ -1,4 +1,4 @@
-import HTTPError from "../../HTTPError";
+import HTTPError from "../../../shared/utils/HTTPError";
 
 export default class ArticleError extends HTTPError {
   public source: string;

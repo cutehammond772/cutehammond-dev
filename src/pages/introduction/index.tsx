@@ -1,5 +1,5 @@
 import { convertDate } from "@/shared/utils/date";
-import * as GithubArticles from "@/shared/utils/article/github";
+import * as GithubArticles from "@/features/article/utils/github";
 import ArticleCard from "@/features/article/components/ArticleCard";
 
 export default async function IntroductionPage() {

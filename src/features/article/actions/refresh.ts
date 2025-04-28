@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidateTag } from "next/cache";
-import { source as github } from "@/shared/utils/article/github";
+import { source as github } from "@/features/article/utils/github";
 
 export type RefreshRequest =
   /* 모든 Article 정보를 갱신합니다. */
