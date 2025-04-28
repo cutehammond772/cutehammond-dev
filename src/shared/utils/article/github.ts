@@ -2,7 +2,7 @@ import { cache } from "react";
 import { Octokit } from "octokit";
 
 import matter from "gray-matter";
-import { decode } from "@/utils/base64";
+import { decode } from "@/shared/utils/base64";
 import {
   ArticleListLoader,
   ArticleLoader,

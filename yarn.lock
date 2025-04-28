@@ -1295,24 +1295,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@upstash/redis@npm:1.25.1":
-  version: 1.25.1
-  resolution: "@upstash/redis@npm:1.25.1"
-  dependencies:
-    crypto-js: "npm:^4.2.0"
-  checksum: 10c0/f065bad9963cd9541a64d1b3651739098df08ee211ae7e738c496a45a04358509d4b19f478867beb72755bab796b3fc247536bf29beb5baf9c29acf152070f32
-  languageName: node
-  linkType: hard
-
-"@vercel/kv@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@vercel/kv@npm:1.0.1"
-  dependencies:
-    "@upstash/redis": "npm:1.25.1"
-  checksum: 10c0/a699cad9c49062f54e11a8901503788f847b3cdc188fa55b262d3dc0d031a39027898d70243d9270bcf1a0d68e6c7bc5222717552f717e13a6f31d399b858cf1
-  languageName: node
-  linkType: hard
-
 "acorn-jsx@npm:^5.0.0, acorn-jsx@npm:^5.3.2":
   version: 5.3.2
   resolution: "acorn-jsx@npm:5.3.2"
@@ -1880,13 +1862,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crypto-js@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "crypto-js@npm:4.2.0"
-  checksum: 10c0/8fbdf9d56f47aea0794ab87b0eb9833baf80b01a7c5c1b0edc7faf25f662fb69ab18dc2199e2afcac54670ff0cd9607a9045a3f7a80336cccd18d77a55b9fdf0
-  languageName: node
-  linkType: hard
-
 "csstype@npm:^3.0.2":
   version: 3.1.3
   resolution: "csstype@npm:3.1.3"
@@ -1906,7 +1881,6 @@ __metadata:
     "@types/node": "npm:20.11.25"
     "@types/react": "npm:19.1.2"
     "@types/react-dom": "npm:19.1.2"
-    "@vercel/kv": "npm:^1.0.1"
     bright: "npm:^1.0.0"
     eslint: "npm:8.57.0"
     eslint-config-next: "npm:15.3.0"

@@ -1,6 +1,6 @@
-import { load } from "@/utils/article/github";
+import { load } from "@/shared/utils/article/github";
 import { ArticleParams } from "./types/article-params";
-import { convertDate } from "@/utils/date";
+import { convertDate } from "@/shared/utils/date";
 import ArticleBody from "@/features/article/components/server/ArticleBody";
 
 export default async function ArticlePage(props: ArticleParams) {
