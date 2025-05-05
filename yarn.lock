@@ -1898,6 +1898,7 @@ __metadata:
     prettier-plugin-tailwindcss: "npm:^0.6.11"
     react: "npm:19.1.0"
     react-dom: "npm:19.1.0"
+    server-only: "npm:^0.0.1"
     tailwindcss: "npm:^4.1.4"
     typescript: "npm:5.4.2"
     zod: "npm:^3.24.3"

@@ -1,8 +1,19 @@
-import { list } from "@/features/article/utils/github";
+import { github } from "@/features/article/loaders";
+import { loader } from "@/shared/utils/loader";
 import { ArticleParams } from "../types/article-params";
 
 export async function getArticleParams() {
-  return (await list({})).articles.map(
-    (title) => ({ slug: title }) satisfies Awaited<ArticleParams["params"]>
+  const [load] = loader(
+    github.articles({
+      user: "cutehammond772",
+      repo: "blog-articles",
+      path: "articles",
+    })
+  );
+
+  const [articles] = await load();
+
+  return articles.map(
+    ({ title }) => ({ slug: title }) satisfies Awaited<ArticleParams["params"]>
   );
 }

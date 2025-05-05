@@ -1,13 +1,17 @@
-import { convertDate } from "@/shared/utils/date";
-import * as GithubArticles from "@/features/article/utils/github";
 import ArticleCard from "@/features/article/components/ArticleCard";
+import { github } from "@/features/article/loaders";
+import { loader } from "@/shared/utils/loader";
 
 export default async function IntroductionPage() {
-  const articles = await Promise.all(
-    (await GithubArticles.list({})).articles.map((title) =>
-      GithubArticles.load({ title })
-    )
+  const [load, revalidate] = loader(
+    github.articles({
+      user: "cutehammond772",
+      repo: "blog-articles",
+      path: "articles",
+    })
   );
+
+  const [articles] = await load();
 
   // 날짜 순으로 정렬한다. (가장 늦게 나온 게시글이 먼저 오도록 한다.)
   articles.sort(
@@ -24,7 +28,7 @@ export default async function IntroductionPage() {
         {articles.map(({ title, createdDate, tag }) => (
           <ArticleCard
             title={title}
-            createdDate={convertDate(createdDate)}
+            createdDate={createdDate.toDateString()}
             tags={tag}
             key={title}
           />
