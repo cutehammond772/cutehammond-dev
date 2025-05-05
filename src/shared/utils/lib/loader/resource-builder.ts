@@ -3,7 +3,7 @@ import React from "react";
 
 import { ResourceOptions } from "./types/resource-options";
 import { Resource, ResourceBuilder } from "./types/resource";
-import { convertToHash } from "../hash";
+import { convertToHash } from "./utils/hash";
 
 function resolveTags<Options extends ResourceOptions>(
   { tags, externalDeps }: Options,
