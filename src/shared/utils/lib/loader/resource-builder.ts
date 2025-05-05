@@ -3,7 +3,7 @@ import React from "react";
 
 import { ResourceOptions } from "./types/resource-options";
 import { Resource, ResourceBuilder } from "./types/resource";
-import { convertToHash } from "../../hash";
+import { convertToHash } from "../hash";
 
 function resolveTags<Options extends ResourceOptions>(
   { tags, externalDeps }: Options,
@@ -38,7 +38,7 @@ function resolveTags<Options extends ResourceOptions>(
 /**
  * loader에 사용될 Resource를 만드는 Builder를 생성합니다.
  */
-export function createResourceBuilder<
+export default function createResourceBuilder<
   RequestOption,
   Result,
   Options extends ResourceOptions,

@@ -3,9 +3,11 @@ import * as z from "zod";
 
 import { Octokit } from "octokit";
 
-import { createResourceBuilder } from "@/shared/utils/lib/loader/resource-builder";
-import { ResourceOptions } from "@/shared/utils/lib/loader/types/resource-options";
-import hierarchy from "@/shared/utils/lib/loader/hierarchy";
+import {
+  createResourceBuilder,
+  ResourceOptions,
+  hierarchy,
+} from "@/shared/utils/lib/loader";
 import { loader } from "@/shared/utils/loader";
 import article from "./article";
 

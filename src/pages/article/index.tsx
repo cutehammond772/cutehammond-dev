@@ -1,5 +1,5 @@
 import ArticleBody from "@/features/article/components/server/ArticleBody";
-import { convertDate } from "@/shared/utils/date";
+import { convertDate } from "@/shared/utils/lib/date";
 
 import { ArticleParams } from "./types/article-params";
 import { loader } from "@/shared/utils/loader";
