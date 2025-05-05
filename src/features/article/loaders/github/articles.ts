@@ -3,13 +3,10 @@ import * as z from "zod";
 
 import { Octokit } from "octokit";
 
-import {
-  createResourceBuilder,
-  ResourceOptions,
-  hierarchy,
-} from "@/shared/utils/lib/loader";
+import { resourceBuilder, ResourceOptions } from "@/shared/utils/lib/loader";
 import { loader } from "@/shared/utils/loader";
 import article from "./article";
+import { hierarchicalTags } from "@/shared/utils/lib/loader/utils";
 
 interface GithubArticlesRequest {
   user: string;
@@ -21,11 +18,11 @@ interface GithubArticlesOptions
   extends GithubArticlesRequest,
     ResourceOptions {}
 
-export default createResourceBuilder(
+export default resourceBuilder(
   (request: GithubArticlesRequest) => {
     return {
       ...request,
-      tags: hierarchy(
+      tags: hierarchicalTags(
         "github",
         `user:${request.user}`,
         `repo:${request.repo}`,

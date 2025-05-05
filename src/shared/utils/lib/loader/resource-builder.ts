@@ -38,7 +38,7 @@ function resolveTags<Options extends ResourceOptions>(
 /**
  * loader에 사용될 Resource를 만드는 Builder를 생성합니다.
  */
-export default function createResourceBuilder<
+export default function resourceBuilder<
   RequestOption,
   Result,
   Options extends ResourceOptions,

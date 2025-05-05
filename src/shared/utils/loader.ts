@@ -1,12 +1,13 @@
 import "server-only";
 import { revalidateTag } from "next/cache";
+import { loaderInstance } from "./lib/loader";
 
-import createLoader from "./lib/loader/create-loader";
-
-export const loader = createLoader({
+export const loader = loaderInstance({
   fetcher: fetch,
-  revalidator: async (tag) => {
+
+  // Server Action 형태이므로 "use server" directive가 포함된다.
+  async revalidator(tags) {
     "use server";
-    revalidateTag(tag);
+    tags.forEach(revalidateTag);
   },
 });

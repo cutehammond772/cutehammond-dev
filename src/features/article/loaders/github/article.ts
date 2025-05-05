@@ -5,11 +5,8 @@ import { Octokit } from "octokit";
 import { decode } from "@/shared/utils/lib/base64";
 import matter from "gray-matter";
 
-import {
-  createResourceBuilder,
-  ResourceOptions,
-  hierarchy,
-} from "@/shared/utils/lib/loader";
+import { resourceBuilder, ResourceOptions } from "@/shared/utils/lib/loader";
+import { hierarchicalTags } from "@/shared/utils/lib/loader/utils";
 
 interface GithubArticleRequest {
   user: string;
@@ -20,11 +17,11 @@ interface GithubArticleRequest {
 
 interface GithubArticleOptions extends GithubArticleRequest, ResourceOptions {}
 
-export default createResourceBuilder(
+export default resourceBuilder(
   (request: GithubArticleRequest) => {
     return {
       ...request,
-      tags: hierarchy(
+      tags: hierarchicalTags(
         "github",
         `user:${request.user}`,
         `repo:${request.repo}`,

@@ -1,11 +1,10 @@
 import "server-only";
+
 import { Resource } from "./types/resource";
-import { LoaderModule } from "./types/loader-module";
+import { LoaderDependencies } from "./types/loader-dependencies";
 import { ResourceOptions } from "./types/resource-options";
-import { revalidateTag } from "next/cache";
 
 type OnlyResult<T> = Resource<T, ResourceOptions>;
-
 type ExtractResults<T extends Resource<unknown, ResourceOptions>[]> =
   T extends [infer U, ...infer V]
     ? U extends OnlyResult<infer W>
@@ -21,10 +20,22 @@ type ExtractResults<T extends Resource<unknown, ResourceOptions>[]> =
 /**
  * loader 구현체를 생성합니다.
  */
-export default function createLoader({ fetcher, revalidator }: LoaderModule) {
+export default function loaderInstance({
+  fetcher,
+  revalidator,
+}: LoaderDependencies) {
   return function loader<T extends Resource<unknown, ResourceOptions>[]>(
     ...resources: T
   ): [() => Promise<ExtractResults<T>>, () => Promise<void>] {
+    const hashedTags = resources
+      .map((resource) =>
+        resource.tags.current.map((tag) => resource.__tagHash[tag])
+      )
+      .flat();
+
+    // Hash 처리된 Tag를 revalidator에 바인딩합니다.
+    const revalidate = revalidator.bind(null, hashedTags);
+
     /**
      * 지정한 리소스를 한 번에 로드합니다.
      */
@@ -32,19 +43,6 @@ export default function createLoader({ fetcher, revalidator }: LoaderModule) {
       return Promise.all(
         resources.map((resource) => resource.load(fetcher))
       ) as Promise<ExtractResults<T>>;
-    }
-
-    /**
-     * 지정한 리소스에 대해 한 번에 재검증을 요청합니다.
-     */
-    async function revalidate() {
-      const hashedTags = resources
-        .map((resource) =>
-          resource.tags.current.map((tag) => resource.__tagHash[tag])
-        )
-        .flat();
-
-      hashedTags.forEach(revalidator);
     }
 
     return [load, revalidate];

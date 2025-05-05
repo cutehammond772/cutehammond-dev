@@ -1,4 +1,4 @@
-import { LoaderModule } from "./loader-module";
+import { LoaderDependencies } from "./loader-dependencies";
 import { ResourceOptions } from "./resource-options";
 
 export type ResourceBuilder<Result, Options extends ResourceOptions> = (
@@ -28,5 +28,5 @@ export type Resource<Result, Options extends ResourceOptions> = {
     current: string[];
   };
 
-  load: (fetcher: LoaderModule["fetcher"]) => Promise<Result>;
+  load: (fetcher: LoaderDependencies["fetcher"]) => Promise<Result>;
 };

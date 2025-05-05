@@ -1,4 +1,3 @@
-export { default as createLoader } from "./create-loader";
-export { default as createResourceBuilder } from "./resource-builder";
-export { default as hierarchy } from "./hierarchy";
+export { default as loaderInstance } from "./loader-instance";
+export { default as resourceBuilder } from "./resource-builder";
 export type { ResourceOptions } from "./types/resource-options";
