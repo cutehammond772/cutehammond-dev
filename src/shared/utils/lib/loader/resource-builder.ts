@@ -3,16 +3,17 @@ import React from "react";
 
 import { ResourceOptions } from "./types/resource-options";
 import { Resource, ResourceBuilder } from "./types/resource";
-import { convertToHash } from "./utils/hash";
+import { convertToHash } from "./utils";
 
 function resolveTags<Options extends ResourceOptions>(
-  { tags, externalDeps }: Options,
+  { tags, parents }: Options,
   convertor: (target: string) => string
 ): {
   tags: Resource<unknown, Options>["tags"];
   hash: Resource<unknown, Options>["__tagHash"];
 } {
-  const parentResources = externalDeps?.parents ?? [];
+  // 상위 의존성
+  const parentResources = parents ?? [];
 
   const currentTags = Array.isArray(tags) ? [...tags] : [tags];
   const tagsFromParents = parentResources.map((val) => val.tags.current).flat();

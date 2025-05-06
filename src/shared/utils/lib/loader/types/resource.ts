@@ -1,5 +1,5 @@
-import { LoaderDependencies } from "./loader-dependencies";
-import { ResourceOptions } from "./resource-options";
+import type { Loader } from "./loader";
+import type { ResourceOptions } from "./resource-options";
 
 export type ResourceBuilder<Result, Options extends ResourceOptions> = (
   options: Options
@@ -8,7 +8,10 @@ export type ResourceBuilder<Result, Options extends ResourceOptions> = (
 /**
  * Resource를 로드하는 데 필요한 정보가 담긴 객체입니다.
  */
-export type Resource<Result, Options extends ResourceOptions> = {
+export type Resource<
+  Result = unknown,
+  Options extends ResourceOptions = ResourceOptions,
+> = {
   /**
    * Resource를 생성할 때 사용된 Option입니다.
    *
@@ -28,5 +31,5 @@ export type Resource<Result, Options extends ResourceOptions> = {
     current: string[];
   };
 
-  load: (fetcher: LoaderDependencies["fetcher"]) => Promise<Result>;
+  load: (fetch: Loader["fetch"]) => Promise<Result>;
 };
