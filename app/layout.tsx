@@ -41,14 +41,8 @@ export default async function Layout({ children }: React.PropsWithChildren) {
             <header className="bg-beige-100 shadow-beige-100 dark:bg-charcoal-900 dark:shadow-charcoal-900 sticky top-0 z-10 col-span-1 col-start-2 flex flex-row items-center justify-between p-4 shadow-2xl md:px-0 md:py-8">
               <div className="flex flex-row items-center justify-center">
                 <Link href="/" className="f3-bold self-start">
-                  🐹.dev
+                  cutehammond.dev
                 </Link>
-              </div>
-              <div className="absolute left-[50%] flex -translate-x-2/4 flex-row gap-2 md:gap-4">
-                <div className="fp-bold bg-beige-300 dark:bg-charcoal-700 flex flex-row items-center justify-center gap-1 px-3 py-1">
-                  <Home className="p-1" />
-                  <span className="hidden md:block">Home</span>
-                </div>
               </div>
               <div className="flex flex-row gap-2">
                 <ThemeToggle />

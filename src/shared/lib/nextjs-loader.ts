@@ -1,6 +1,6 @@
 import "server-only";
 import { revalidateTag } from "next/cache";
-import { loaderInstance } from "./lib/loader";
+import { loaderInstance } from "./loader";
 
 export const loader = loaderInstance({
   fetch,

@@ -2,11 +2,11 @@ import "server-only";
 import * as z from "zod";
 
 import { Octokit } from "octokit";
-import { decode } from "@/shared/utils/lib/base64";
+import { decode } from "@/shared/lib/base64";
 import matter from "gray-matter";
 
-import { resourceBuilder, ResourceOptions } from "@/shared/utils/lib/loader";
-import { hierarchicalTags } from "@/shared/utils/lib/loader/utils";
+import { resourceBuilder, ResourceOptions } from "@/shared/lib/loader";
+import { hierarchicalTags } from "@/shared/lib/loader/utils";
 
 interface GithubArticleRequest {
   user: string;

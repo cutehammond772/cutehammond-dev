@@ -1,8 +1,8 @@
 import ArticleBody from "@/features/article/components/server/ArticleBody";
-import { convertDate } from "@/shared/utils/lib/date";
+import { convertDate } from "@/shared/lib/date";
 
 import { ArticleParams } from "./types/article-params";
-import { loader } from "@/shared/utils/loader";
+import { loader } from "@/shared/lib/nextjs-loader";
 import { github } from "@/features/article/loaders";
 
 export default async function ArticlePage(props: ArticleParams) {

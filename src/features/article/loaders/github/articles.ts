@@ -3,10 +3,10 @@ import * as z from "zod";
 
 import { Octokit } from "octokit";
 
-import { resourceBuilder, ResourceOptions } from "@/shared/utils/lib/loader";
-import { loader } from "@/shared/utils/loader";
+import { resourceBuilder, ResourceOptions } from "@/shared/lib/loader";
+import { loader } from "@/shared/lib/nextjs-loader";
 import article from "./article";
-import { hierarchicalTags } from "@/shared/utils/lib/loader/utils";
+import { hierarchicalTags } from "@/shared/lib/loader/utils";
 
 interface GithubArticlesRequest {
   user: string;
