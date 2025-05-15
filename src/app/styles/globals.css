@@ -1,106 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is([data-theme="dark"] *));
-
-@theme {
-  --color-charcoal-500: #445158;
-  --color-charcoal-700: #2f3c43;
-  --color-charcoal-900: #262f36;
-
-  --color-beige-100: #d1bfb5;
-  --color-beige-300: #bdaba1;
-  --color-beige-500: #a08e84;
-
-  --color-text-100: #eeeeee;
-  --color-text-300: #cdcdcd;
-  --color-text-500: #787878;
-  --color-text-700: #303030;
-  --color-text-900: #1f1f1f;
-}
-
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
-
-@utility f1-bold {
-  /* Headline 1 */
-  @apply text-[32px] font-bold md:text-[40px];
-}
-
-@utility f1-regular {
-  @apply text-[32px] font-normal md:text-[40px];
-}
-
-@utility f1-thin {
-  @apply text-[32px] font-thin md:text-[40px];
-}
-
-@utility f2-bold {
-  /* Headline 2 */
-  @apply text-[24px] font-bold md:text-[32px];
-}
-
-@utility f2-regular {
-  @apply text-[24px] font-normal md:text-[32px];
-}
-
-@utility f2-thin {
-  @apply text-[24px] font-thin md:text-[32px];
-}
-
-@utility f3-bold {
-  /* Headline 3 */
-  @apply text-[20px] font-bold md:text-[24px];
-}
-
-@utility f3-regular {
-  @apply text-[20px] font-normal md:text-[24px];
-}
-
-@utility f3-thin {
-  @apply text-[20px] font-thin md:text-[24px];
-}
-
-@utility fp-bold {
-  /* Paragraph */
-  @apply text-[16px] font-bold md:text-[20px];
-}
-
-@utility fp-regular {
-  @apply text-[16px] font-normal md:text-[20px];
-}
-
-@utility fp-thin {
-  @apply text-[16px] font-thin md:text-[20px];
-}
-
-@layer base {
-  /* blockquote 내부 paragraph의 margin 설정을 무효화시킨다. */
-  blockquote > p {
-    margin: 0 !important;
-  }
-}
-
-/*
-  ---break---
-*/
-
 @theme inline {
+  /* Custom Fonts */
+  --font-mono: var(--font-monoplex);
+  --font-sans: var(--font-pretendard);
+  --font-serif: var(--font-ridibatang);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -138,30 +44,27 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/*
-  ---break---
-*/
-
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --radius: 0rem;
+  --background: oklch(0.95 0.05 70);
+  --foreground: oklch(0.1 0.01 70);
+  --card: oklch(0.9 0.03 70);
+  --card-foreground: oklch(0.2 0.01 70);
+  --popover: oklch(0.95 0.05 70);
+  --popover-foreground: oklch(0.1 0.01 70);
+  --primary: oklch(0.65 0.2 70);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.75 0.05 70);
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.85 0.03 60);
+  --muted-foreground: oklch(0.45 0.02 70);
+  --accent: oklch(0.8 0.04 60);
+  --accent-foreground: oklch(0.2 0.01 70);
+  --destructive: oklch(0.5 0.25 30);
+  --destructive-foreground: oklch(0.9 0.01 70);
+  --border: oklch(0.6 0.1 70);
+  --input: oklch(0.3 0.05 70);
+  --ring: oklch(0.65 0.2 70);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -177,29 +80,27 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-/*
-  ---break---
-*/
-
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --background: oklch(0.15 0.03 70);
+  --foreground: oklch(0.9 0.01 70);
+  --card: oklch(0.1 0.02 70);
+  --card-foreground: oklch(0.9 0.01 70);
+  --popover: oklch(0.15 0.03 70);
+  --popover-foreground: oklch(0.9 0.01 70);
+  --primary: oklch(0.65 0.2 70);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.2 0.05 70);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.25 0.03 60);
+  --muted-foreground: oklch(0.65 0.02 70);
+  --accent: oklch(0.25 0.04 60);
+  --accent-foreground: oklch(0.9 0.01 70);
+  --destructive: oklch(0.5 0.25 30);
+  --destructive-foreground: oklch(0.9 0.01 70);
+  --border: oklch(0.3 0.05 70);
+  --input: oklch(0.3 0.05 70);
+  --ring: oklch(0.65 0.2 70);
+  --radius: 0rem;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -214,10 +115,6 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
-
-/*
-  ---break---
-*/
 
 @layer base {
   * {
