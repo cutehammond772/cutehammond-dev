@@ -18,12 +18,18 @@ export default function ThemeToggle() {
   const theme = useMemo(() => Theme.parse(nativeTheme), [nativeTheme]);
 
   return (
-    <ClientOnly fallback={ThemeIcons.system}>
+    <ClientOnly
+      fallback={
+        <Button variant="outline" title="Theme 설정">
+          {ThemeIcons.system}
+        </Button>
+      }
+    >
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
-              variant="ghost"
+              variant="outline"
               onClick={() => setTheme(NEXT_THEME[theme])}
               title="Theme 설정"
             >
