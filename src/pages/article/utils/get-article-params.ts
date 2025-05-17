@@ -1,5 +1,5 @@
 import { github } from "@/features/article/loaders";
-import { loader } from "@/shared/lib/nextjs-loader";
+import { loader } from "@/shared/lib/loader";
 import { ArticleParams } from "../types/article-params";
 
 export async function getArticleParams() {

@@ -2,7 +2,7 @@ import ArticleCardSkeleton from "@/features/article/components/ArticleCardSkelet
 
 const cards = [1, 2, 3, 4, 5, 6];
 
-export default function IntroductionLoadingPage() {
+export default function LoadingPage() {
   return (
     <>
       <div className="f3-bold mt-24 mb-8 animate-pulse px-4 md:mt-48 md:px-0">

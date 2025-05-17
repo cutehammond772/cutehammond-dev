@@ -4,9 +4,8 @@ import * as z from "zod";
 import { Octokit } from "octokit";
 import { decode } from "@/shared/lib/base64";
 import matter from "gray-matter";
-
-import { resourceBuilder, ResourceOptions } from "@/shared/lib/loader";
-import { hierarchicalTags } from "@/shared/lib/loader/utils";
+import { buildResource, ResourceOptions } from "@h1y/next-loader";
+import { hierarchicalTags } from "@h1y/next-loader/utils";
 
 interface GithubArticleRequest {
   user: string;
@@ -17,7 +16,7 @@ interface GithubArticleRequest {
 
 interface GithubArticleOptions extends GithubArticleRequest, ResourceOptions {}
 
-export default resourceBuilder(
+export default buildResource(
   (request: GithubArticleRequest) => {
     return {
       ...request,

@@ -1,44 +1,15 @@
-import ArticleCard from "@/features/article/components/ArticleCard";
-import { github } from "@/features/article/loaders";
-import { loader } from "@/shared/lib/nextjs-loader";
-import RefreshButton from "./components/RefreshButton";
+import HeroSection from "./components/HeroSection";
+import ArticleSection from "./components/ArticleSection";
+import { Suspense } from "react";
+import LoadingPage from "./components/LoadingPage";
 
 export default async function IntroductionPage() {
-  const [load, revalidate] = loader(
-    github.articles({
-      user: "cutehammond772",
-      repo: "blog-articles",
-      path: "articles",
-    })
-  );
-
-  const [articles] = await load();
-
-  // 날짜 순으로 정렬한다. (가장 늦게 나온 게시글이 먼저 오도록 한다.)
-  articles.sort(
-    (a, b) =>
-      new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime()
-  );
-
   return (
-    <>
-      <div className="f3-bold mt-24 mb-8 px-4 md:mt-48 md:px-0">
-        최근 작성된 글
-      </div>
-      <div>최근 업데이트: {new Date().toISOString()}</div>
-      <form action={revalidate}>
-        <RefreshButton />
-      </form>
-      <div className="flex flex-col gap-6">
-        {articles.map(({ title, createdDate, tag }) => (
-          <ArticleCard
-            title={title}
-            createdDate={createdDate.toDateString()}
-            tags={tag}
-            key={title}
-          />
-        ))}
-      </div>
-    </>
+    <div className="mt-32 flex flex-col gap-32">
+      <HeroSection />
+      <Suspense fallback={<LoadingPage />}>
+        <ArticleSection />
+      </Suspense>
+    </div>
   );
 }

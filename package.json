@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@h1y/next-loader": "^1.0.1",
     "@hookform/resolvers": "^5.0.1",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",

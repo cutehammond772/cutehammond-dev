@@ -2,11 +2,10 @@ import "server-only";
 import * as z from "zod";
 
 import { Octokit } from "octokit";
-
-import { resourceBuilder, ResourceOptions } from "@/shared/lib/loader";
-import { loader } from "@/shared/lib/nextjs-loader";
+import { loader } from "@/shared/lib/loader";
 import article from "./article";
-import { hierarchicalTags } from "@/shared/lib/loader/utils";
+import { hierarchicalTags } from "@h1y/next-loader/utils";
+import { buildResource, ResourceOptions } from "@h1y/next-loader";
 
 interface GithubArticlesRequest {
   user: string;
@@ -18,7 +17,7 @@ interface GithubArticlesOptions
   extends GithubArticlesRequest,
     ResourceOptions {}
 
-export default resourceBuilder(
+export default buildResource(
   (request: GithubArticlesRequest) => {
     return {
       ...request,
