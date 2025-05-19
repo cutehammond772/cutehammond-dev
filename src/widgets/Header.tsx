@@ -16,7 +16,7 @@ export default function Header() {
         justify="between"
         className="p-4 md:p-8"
       >
-        <Link href="/" className="self-start text-2xl font-extrabold">
+        <Link href="/" className="text-xl font-extrabold md:text-2xl">
           cutehammond.dev
         </Link>
         <HStack items="center" gap={4}>
