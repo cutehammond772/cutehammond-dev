@@ -3370,6 +3370,7 @@ __metadata:
     next: "npm:15.3.0"
     next-mdx-remote: "npm:^5.0.0"
     next-themes: "npm:^0.4.6"
+    nextjs-toploader: "npm:^3.8.16"
     octokit: "npm:^3.1.0"
     postcss: "npm:8.4.35"
     prettier: "npm:^3.2.4"
@@ -6193,6 +6194,27 @@ __metadata:
   bin:
     next: dist/bin/next
   checksum: 10c0/6e0cb3aff3487ca4c705b824c3b773e4a639cf19b9d7333b78314915b155c84c16e0855f5f235d0ebfc2a957276a11b90efd4b61213d544740f91a49e3e1be63
+  languageName: node
+  linkType: hard
+
+"nextjs-toploader@npm:^3.8.16":
+  version: 3.8.16
+  resolution: "nextjs-toploader@npm:3.8.16"
+  dependencies:
+    nprogress: "npm:^0.2.0"
+    prop-types: "npm:^15.8.1"
+  peerDependencies:
+    next: ">= 6.0.0"
+    react: ">= 16.0.0"
+    react-dom: ">= 16.0.0"
+  checksum: 10c0/b705a81638dbf68d6c278b391ae00be1e59e823e7085ad3a4f638b804b007603d6bfe7c5d84e94770dd04cae3eb7101acf8df7bdcf0144bcc40f6a9f8a25e85b
+  languageName: node
+  linkType: hard
+
+"nprogress@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "nprogress@npm:0.2.0"
+  checksum: 10c0/eab9a923a1ad1eed71a455ecfbc358442dd9bcd71b9fa3fa1c67eddf5159360b182c218f76fca320c97541a1b45e19ced04e6dcb044a662244c5419f8ae9e821
   languageName: node
   linkType: hard
 
