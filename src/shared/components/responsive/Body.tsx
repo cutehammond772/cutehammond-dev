@@ -7,7 +7,7 @@ type Props = VariantProps<typeof variants> & {
 };
 
 const variants = cva(
-  "grid md:grid-cols-[1fr_4fr_1fr] lg:grid-cols-[1fr_2fr_1fr]"
+  "grid md:grid-cols-[1fr_768px_1fr] lg:grid-cols-[1fr_1024px_1fr]"
 );
 
 export default function ResponsiveBody<C extends React.ElementType = "div">({

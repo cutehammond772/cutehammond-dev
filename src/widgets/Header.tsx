@@ -8,9 +8,14 @@ export default function Header() {
   return (
     <ResponsiveBody
       as="header"
-      className="bg-background/50 sticky top-0 z-10 p-8 font-sans backdrop-blur-sm"
+      className="bg-background/50 sticky top-0 z-10 font-sans backdrop-blur-sm"
     >
-      <HStack as={ResponsiveCenter} items="center" justify="between">
+      <HStack
+        as={ResponsiveCenter}
+        items="center"
+        justify="between"
+        className="p-4 md:p-8"
+      >
         <Link href="/" className="self-start text-2xl font-extrabold">
           cutehammond.dev
         </Link>

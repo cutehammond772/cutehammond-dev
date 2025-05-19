@@ -6,7 +6,7 @@ type Props = VariantProps<typeof variants> & {
   className?: string;
 };
 
-const variants = cva("col-span-1 col-start-2");
+const variants = cva("px-4 md:px-0 md:col-span-1 md:col-start-2");
 
 export default function ResponsiveCenter<C extends React.ElementType = "div">({
   as: PolymorphicComponent,
