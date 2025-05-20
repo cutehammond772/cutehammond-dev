@@ -1,22 +1,31 @@
 import localFont from "next/font/local";
 
 export const pretendard = localFont({
+  src: "./PretendardVariable.woff2",
+  display: "swap",
+  variable: "--font-pretendard",
+});
+
+export const monoplex = localFont({
   src: [
     {
-      path: "./Pretendard-Bold.woff2",
-      weight: "700",
+      path: "./MonoplexKR-Text.ttf",
+      weight: "300",
       style: "normal",
     },
     {
-      path: "./Pretendard-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./Pretendard-Thin.woff2",
-      weight: "100",
-      style: "normal",
+      path: "./MonoplexKR-TextItalic.ttf",
+      weight: "300",
+      style: "italic",
     },
   ],
-  fallback: ["system-ui"],
+  display: "swap",
+  variable: "--font-monoplex",
+});
+
+export const ridibatang = localFont({
+  src: "./RIDIBatang.otf",
+  weight: "400",
+  display: "swap",
+  variable: "--font-ridibatang",
 });
