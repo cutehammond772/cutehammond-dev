@@ -44,10 +44,8 @@ export default async function Layout({ children }: React.PropsWithChildren) {
         <JotaiProvider>
           <ThemeProvider>
             <Header />
-            <ResponsiveBody as="main">
-              <ResponsiveCenter className="min-h-screen">
-                {children}
-              </ResponsiveCenter>
+            <ResponsiveBody as="main" className="min-h-screen">
+              {children}
             </ResponsiveBody>
             <Footer />
             <Toaster />
