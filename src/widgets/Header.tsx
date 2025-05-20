@@ -14,7 +14,7 @@ export default function Header() {
         as={ResponsiveCenter}
         items="center"
         justify="between"
-        className="p-4 md:p-8"
+        className="py-4 md:py-8"
       >
         <Link href="/" className="text-xl font-extrabold md:text-2xl">
           cutehammond.dev

@@ -6,9 +6,7 @@ type Props = VariantProps<typeof variants> & {
   className?: string;
 };
 
-const variants = cva(
-  "grid md:grid-cols-[1fr_768px_1fr] lg:grid-cols-[1fr_1024px_1fr]"
-);
+const variants = cva("grid md:grid-cols-[1fr_768px_1fr]");
 
 export default function ResponsiveBody<C extends React.ElementType = "div">({
   as: PolymorphicComponent,
