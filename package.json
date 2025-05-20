@@ -89,6 +89,7 @@
   },
   "packageManager": "yarn@4.9.1",
   "devDependencies": {
+    "remark-gfm": "^4.0.1",
     "tw-animate-css": "^1.2.9"
   }
 }
