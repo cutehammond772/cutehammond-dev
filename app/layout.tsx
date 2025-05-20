@@ -10,7 +10,6 @@ import { monoplex, pretendard, ridibatang } from "@/app/styles/font";
 import { cn } from "@/shared/lib/shadcn-utils";
 import ResponsiveBody from "@/shared/components/Responsive/Body";
 import { Toaster } from "@/shared/components/ui/sonner";
-import ResponsiveCenter from "@/shared/components/Responsive/Center";
 import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
