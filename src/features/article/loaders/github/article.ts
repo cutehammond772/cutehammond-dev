@@ -1,5 +1,5 @@
 import "server-only";
-import * as z from "zod";
+import { z } from "zod/v4";
 
 import { Octokit } from "octokit";
 import { decode } from "@/shared/lib/base64";

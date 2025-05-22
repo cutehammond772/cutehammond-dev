@@ -3382,14 +3382,18 @@ __metadata:
     react-hook-form: "npm:^7.56.2"
     react-resizable-panels: "npm:^3.0.1"
     recharts: "npm:^2.15.3"
+    remark-mdx: "npm:^3.1.0"
+    remark-parse: "npm:^11.0.0"
     server-only: "npm:^0.0.1"
     sonner: "npm:^2.0.3"
     tailwind-merge: "npm:^3.2.0"
     tailwindcss: "npm:^4.1.4"
     tw-animate-css: "npm:^1.2.9"
     typescript: "npm:5.4.2"
+    unified: "npm:^11.0.5"
+    unist-util-visit: "npm:^5.0.0"
     vaul: "npm:^1.1.2"
-    zod: "npm:^3.24.4"
+    zod: "npm:^3.25.20"
   languageName: unknown
   linkType: soft
 
@@ -6865,7 +6869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-mdx@npm:^3.0.0":
+"remark-mdx@npm:^3.0.0, remark-mdx@npm:^3.1.0":
   version: 3.1.0
   resolution: "remark-mdx@npm:3.1.0"
   dependencies:
@@ -7712,7 +7716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unified@npm:^11.0.0":
+"unified@npm:^11.0.0, unified@npm:^11.0.5":
   version: 11.0.5
   resolution: "unified@npm:11.0.5"
   dependencies:
@@ -8114,10 +8118,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.24.4":
-  version: 3.24.4
-  resolution: "zod@npm:3.24.4"
-  checksum: 10c0/ab3112f017562180a41a0f83d870b333677f7d6b77f106696c56894567051b91154714a088149d8387a4f50806a2520efcb666f108cd384a35c236a191186d91
+"zod@npm:^3.25.20":
+  version: 3.25.20
+  resolution: "zod@npm:3.25.20"
+  checksum: 10c0/f3b3e8875e1e02ca25bbfd45332aa1010f1b252b60a619c94c15bd6de637f841d344a3975d6950b2fbee68db4160ddb534cb9571c517fac17983871739085278
   languageName: node
   linkType: hard
 
