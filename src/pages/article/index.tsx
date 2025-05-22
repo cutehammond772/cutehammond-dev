@@ -1,11 +1,10 @@
+import ArticleBody from "@/features/article/components/server/ArticleBody";
+import { github } from "@/features/article/loaders";
 import ResponsiveCenter from "@/shared/components/Responsive/Center";
 import { loader } from "@/shared/lib/loader";
-import { github } from "@/features/article/loaders";
 
-import ArticleBody from "@/features/article/components/server/ArticleBody";
-
-import { ArticleParams } from "./types/article-params";
 import ArticleBanner from "./components/ArticleBanner";
+import { ArticleParams } from "./types/article-params";
 
 export default async function ArticlePage(props: ArticleParams) {
   const { slug } = await props.params;
@@ -22,15 +21,13 @@ export default async function ArticlePage(props: ArticleParams) {
   const [article] = await load();
 
   return (
-    <ResponsiveCenter className="mt-24">
+    <ResponsiveCenter as="section" className="relative mt-24">
       <ArticleBanner
         tag={article.tag}
         createdDate={article.createdDate}
         title={article.title}
       />
-      <article>
-        <ArticleBody markdown={article.content} />
-      </article>
+      <ArticleBody markdown={article.content} />
     </ResponsiveCenter>
   );
 }
