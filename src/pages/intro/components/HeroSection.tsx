@@ -1,5 +1,6 @@
 import HStack from "@/shared/components/Container/HStack";
 import VStack from "@/shared/components/Container/VStack";
+import H1 from "@/shared/components/Primitive/H1";
 import { Button } from "@/shared/components/ui/button";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Link2Icon } from "lucide-react";
@@ -21,7 +22,7 @@ export default function HeroSection() {
       </div>
       <VStack justify="between" gap={8}>
         <VStack gap={4}>
-          <h1 className="text-xl font-extrabold md:text-3xl">Jungheon Lee</h1>
+          <H1>Jungheon Lee</H1>
           <span>이정헌 / 2001.02.28</span>
           <HStack gap={4}>
             <Button asChild variant="outline">

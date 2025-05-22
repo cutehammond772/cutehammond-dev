@@ -1,32 +1,17 @@
 import { cn } from "@/shared/lib/shadcn-utils";
 import type { MDXComponents } from "mdx/types";
+import H1 from "../Primitive/H1";
+import H2 from "../Primitive/H2";
+import H3 from "../Primitive/H3";
 
 export default {
   h1: ({ className, ...props }) => (
-    <h1
-      className={cn(
-        "text-foreground my-8 font-sans text-2xl font-bold tracking-tight md:text-3xl",
-        className
-      )}
-      {...props}
-    />
+    <H1 className={cn("my-8", className)} {...props} />
   ),
   h2: ({ className, ...props }) => (
-    <h2
-      className={cn(
-        "text-foreground my-8 font-sans text-xl font-semibold tracking-tight md:text-2xl",
-        className
-      )}
-      {...props}
-    />
+    <H2 className={cn("my-8", className)} {...props} />
   ),
   h3: ({ className, ...props }) => (
-    <h3
-      className={cn(
-        "text-foreground my-8 font-sans text-lg font-semibold tracking-tight md:text-xl",
-        className
-      )}
-      {...props}
-    />
+    <H3 className={cn("my-8", className)} {...props} />
   ),
 } satisfies MDXComponents;

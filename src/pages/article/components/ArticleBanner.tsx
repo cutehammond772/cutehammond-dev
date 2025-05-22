@@ -1,3 +1,5 @@
+import { Clock } from "lucide-react";
+
 import { Badge } from "@/shared/components/ui/badge";
 import {
   Card,
@@ -6,10 +8,9 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card";
 import { convertDate } from "@/shared/lib/date";
-import Markdown from "@/shared/components/Markdown";
 import HStack from "@/shared/components/Container/HStack";
 import VStack from "@/shared/components/Container/VStack";
-import { Clock } from "lucide-react";
+import H1 from "@/shared/components/Primitive/H1";
 
 export default function ArticleBanner({
   tag,
@@ -24,7 +25,7 @@ export default function ArticleBanner({
     <Card>
       <CardHeader>
         <CardTitle>
-          <Markdown.h1>{title}</Markdown.h1>
+          <H1>{title}</H1>
         </CardTitle>
         <VStack as={CardDescription} gap={2}>
           <HStack gap={2} items="center">

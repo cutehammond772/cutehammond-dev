@@ -8,6 +8,7 @@ import VStack from "@/shared/components/Container/VStack";
 import HStack from "@/shared/components/Container/HStack";
 
 import ArticleCard from "../ArticleCard";
+import H1 from "@/shared/components/Primitive/H1";
 
 const resource = github.articles({
   user: "cutehammond772",
@@ -32,7 +33,7 @@ export default async function ArticleSection() {
   return (
     <VStack gap={8}>
       <VStack gap={4}>
-        <h1 className="text-3xl font-bold">최근 작성된 글</h1>
+        <H1>최근 작성된 글</H1>
         <HStack gap={2} items="center" className="text-muted-foreground">
           <RefreshCwIcon className="h-4 w-4" />
           <span className="font-serif text-sm">{currentDate}에 갱신됨</span>
