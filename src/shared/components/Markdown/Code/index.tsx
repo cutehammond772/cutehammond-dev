@@ -3,9 +3,10 @@ import { MDXComponents } from "mdx/types";
 import VStack from "@/shared/components/Container/VStack";
 import HStack from "@/shared/components/Container/HStack";
 
-import lineNumbers from "./extensions/line-numbers";
+import lineNumbers from "./handlers/line-numbers";
 import CodeTitle from "./CodeTitle";
 import CopyButton from "./CopyButton";
+import wordWrap from "./handlers/word-wrap";
 
 async function Code({ codeblock }: { codeblock: RawCode }) {
   const highlighted = await highlight(codeblock, "monokai");
@@ -20,7 +21,7 @@ async function Code({ codeblock }: { codeblock: RawCode }) {
         <Pre
           code={highlighted}
           style={highlighted.style}
-          handlers={[lineNumbers]}
+          handlers={[lineNumbers, wordWrap]}
           className="border-primary border-x-4 font-mono text-sm whitespace-break-spaces md:text-base"
         />
         <VStack className="bg-background sticky bottom-0 h-24">
