@@ -35,7 +35,7 @@ export default function ArticleBanner({
               {convertDate(createdDate.toDateString())}
             </Text>
           </HStack>
-          <HStack gap={2} items="center">
+          <HStack gap={2} items="center" wrap="wrap">
             {tag.map((tag) => (
               <Badge key={tag} variant="secondary">
                 {tag}
