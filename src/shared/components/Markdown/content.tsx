@@ -2,16 +2,12 @@ import { cn } from "@/shared/lib/shadcn-utils";
 import { Link2Icon } from "lucide-react";
 import { MDXComponents } from "mdx/types";
 import Link from "next/link";
+import Paragraph from "../Primitive/Paragraph";
+import Text from "../Primitive/Text";
 
 export default {
   p: ({ className, ...props }) => (
-    <p
-      className={cn(
-        "text-foreground font-serif text-base leading-loose break-keep",
-        className
-      )}
-      {...props}
-    />
+    <Paragraph className={cn(className)} {...props} />
   ),
   ul: ({ className, ...props }) => (
     <ul className={cn("my-8 list-inside list-disc", className)} {...props} />
@@ -64,7 +60,7 @@ export default {
       {...props}
     >
       <Link2Icon className="mr-2 inline-block h-4 w-4" />
-      <span>{children}</span>
+      <Text>{children}</Text>
     </Link>
   ),
 } satisfies MDXComponents;

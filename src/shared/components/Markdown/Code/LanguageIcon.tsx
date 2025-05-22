@@ -34,7 +34,7 @@ const mappings: Record<string, SimpleIcons.IconType> = {
   r: SimpleIcons.SiR,
 };
 
-const LanguageIcon: React.FC<Props> = ({ lang, size }) => {
+export default function LanguageIcon({ lang, size }: Props) {
   const IconComponent = mappings[lang];
 
   if (!IconComponent) {
@@ -42,6 +42,4 @@ const LanguageIcon: React.FC<Props> = ({ lang, size }) => {
   }
 
   return <IconComponent size={size} />;
-};
-
-export default LanguageIcon;
+}

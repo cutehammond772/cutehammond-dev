@@ -12,6 +12,7 @@ import {
 } from "@/shared/components/ui/card";
 import { Badge } from "@/shared/components/ui/badge";
 import HStack from "@/shared/components/Container/HStack";
+import Text from "@/shared/components/Primitive/Text";
 
 interface Props {
   title: string;
@@ -36,9 +37,9 @@ export default function ArticleCard({ title, createdDate, tags }: Props) {
         </CardHeader>
 
         <CardContent>
-          <HStack gap={1} items="center" className="text-muted-foreground">
+          <HStack gap={1} items="center">
             <Clock className="h-4 w-4" />
-            <span className="font-serif text-sm">{dateFromNow}에 작성됨</span>
+            <Text variant="muted">{dateFromNow}에 작성됨</Text>
           </HStack>
         </CardContent>
 

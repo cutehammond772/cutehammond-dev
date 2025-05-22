@@ -11,6 +11,7 @@ import { convertDate } from "@/shared/lib/date";
 import HStack from "@/shared/components/Container/HStack";
 import VStack from "@/shared/components/Container/VStack";
 import H1 from "@/shared/components/Primitive/H1";
+import Text from "@/shared/components/Primitive/Text";
 
 export default function ArticleBanner({
   tag,
@@ -29,10 +30,10 @@ export default function ArticleBanner({
         </CardTitle>
         <VStack as={CardDescription} gap={2}>
           <HStack gap={2} items="center">
-            <Clock className="h-4 w-4" />
-            <div className="text-foreground font-serif text-base">
+            <Clock size={16} />
+            <Text variant="muted">
               {convertDate(createdDate.toDateString())}
-            </div>
+            </Text>
           </HStack>
           <HStack gap={2} items="center">
             {tag.map((tag) => (
