@@ -1,10 +1,12 @@
-import ArticleBody from "@/features/article/components/server/ArticleBody";
 import { github } from "@/features/article/loaders";
-import ResponsiveCenter from "@/shared/components/Responsive/Center";
 import { loader } from "@/shared/lib/loader";
+import MainLayout from "@/shared/components/Layout/MainLayout";
+import LeftSideLayout from "@/shared/components/Layout/LeftSideLayout";
 
 import ArticleBanner from "./components/ArticleBanner";
 import { ArticleParams } from "./types/article-params";
+import Anchor from "./components/Anchor";
+import ArticleContent from "./components/ArticleContent";
 
 export default async function ArticlePage(props: ArticleParams) {
   const { slug } = await props.params;
@@ -21,13 +23,18 @@ export default async function ArticlePage(props: ArticleParams) {
   const [article] = await load();
 
   return (
-    <ResponsiveCenter as="section" className="relative mt-24">
-      <ArticleBanner
-        tag={article.tag}
-        createdDate={article.createdDate}
-        title={article.title}
-      />
-      <ArticleBody markdown={article.content} />
-    </ResponsiveCenter>
+    <>
+      <LeftSideLayout>
+        <Anchor mdxContent={article.content} />
+      </LeftSideLayout>
+      <MainLayout>
+        <ArticleBanner
+          tag={article.tag}
+          createdDate={article.createdDate}
+          title={article.title}
+        />
+        <ArticleContent mdxContent={article.content} />
+      </MainLayout>
+    </>
   );
 }

@@ -1,11 +1,11 @@
 import type { MDXComponents } from "mdx/types";
 import content from "./content";
-import heading from "./heading";
+import Heading from "./Heading";
 import table from "./table";
 import Code from "./Code";
 
 export default {
-  ...heading,
+  ...Heading,
   ...table,
   ...content,
   ...Code,

@@ -9,6 +9,10 @@ const textVariants = cva("text-sm md:text-base", {
       serif: "font-serif",
       mono: "font-mono",
     },
+    size: {
+      default: "text-sm md:text-base",
+      sm: "text-xs md:text-sm",
+    },
     variant: {
       default: "",
       muted: "text-muted-foreground",
@@ -21,6 +25,7 @@ const textVariants = cva("text-sm md:text-base", {
   defaultVariants: {
     variant: "default",
     font: "serif",
+    size: "default",
   },
 });
 
@@ -32,13 +37,14 @@ export default function Text<C extends React.ElementType = "span">({
   as: PolymorphicComponent,
   font,
   variant,
+  size,
   className,
   ...props
 }: PolymorphicComponentProps<C, Props>) {
   const Component = PolymorphicComponent ?? "span";
   return (
     <Component
-      className={cn(textVariants({ font, variant }), className)}
+      className={cn(textVariants({ font, variant, size }), className)}
       {...props}
     />
   );

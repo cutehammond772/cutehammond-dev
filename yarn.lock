@@ -3381,6 +3381,7 @@ __metadata:
     react-error-boundary: "npm:^6.0.0"
     react-hook-form: "npm:^7.56.2"
     react-resizable-panels: "npm:^3.0.1"
+    react-to-text: "npm:^2.0.1"
     recharts: "npm:^2.15.3"
     remark-mdx: "npm:^3.1.0"
     remark-parse: "npm:^11.0.0"
@@ -6727,6 +6728,16 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 10c0/841938ff16d16a6b76895f4cb2e1fea957e5fe3b30febbf03a54892dae1c9153f2383e231dea0b3ba41192ad2f2849448fa859caccd288943bce32639e971bee
+  languageName: node
+  linkType: hard
+
+"react-to-text@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "react-to-text@npm:2.0.1"
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 10c0/3c0ce17c0aabbf28a2794c01bdad125c84ab070ade0d8414884e280bf83cd6a9bf21368de4a321b92f69388421e3c486db2787eb095aeee2209689b740a93843
   languageName: node
   linkType: hard
 
