@@ -1,28 +1,20 @@
 import Link from "next/link";
 import ThemeToggle from "@/features/theme/components/ThemeToggle";
-import ResponsiveBody from "@/shared/components/Responsive/Body";
-import ResponsiveCenter from "@/shared/components/Responsive/Center";
 import HStack from "@/shared/components/Container/HStack";
+import HeaderLayout from "@/shared/components/Layout/HeaderLayout";
+import H2 from "@/shared/components/Primitive/H2";
 
 export default function Header() {
   return (
-    <ResponsiveBody
-      as="header"
-      className="bg-background/50 sticky top-0 z-10 font-sans backdrop-blur-sm"
-    >
-      <HStack
-        as={ResponsiveCenter}
-        items="center"
-        justify="between"
-        className="py-4 md:py-8"
-      >
-        <Link href="/" className="text-xl font-extrabold md:text-2xl">
+    <HeaderLayout className="bg-background/50 z-10 backdrop-blur-sm">
+      <HStack items="center" justify="between">
+        <H2 as={Link} href="/">
           cutehammond.dev
-        </Link>
+        </H2>
         <HStack items="center" gap={4}>
           <ThemeToggle />
         </HStack>
       </HStack>
-    </ResponsiveBody>
+    </HeaderLayout>
   );
 }

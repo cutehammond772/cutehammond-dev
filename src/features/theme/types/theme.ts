@@ -1,4 +1,4 @@
-import * as z from "zod";
+import { z } from "zod/v4";
 
 export const Theme = z.enum(["light", "dark", "system"]).default("system");
 export type Theme = z.infer<typeof Theme>;

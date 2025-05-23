@@ -1,12 +1,11 @@
-import ResponsiveBody from "@/shared/components/Responsive/Body";
-import ResponsiveCenter from "@/shared/components/Responsive/Center";
+import HStack from "@/shared/components/Container/HStack";
+import FooterLayout from "@/shared/components/Layout/FooterLayout";
+import Text from "@/shared/components/Primitive/Text";
 
 export function Footer() {
   return (
-    <ResponsiveBody as="footer" className="mt-24 gap-2">
-      <ResponsiveCenter className="p-4 text-center font-serif md:p-8">
-        Edit by Jungheon Lee
-      </ResponsiveCenter>
-    </ResponsiveBody>
+    <HStack as={FooterLayout} className="mt-24" justify="center" items="center">
+      <Text>Edit by Jungheon Lee</Text>
+    </HStack>
   );
 }

@@ -8,9 +8,9 @@ import Header from "@/widgets/Header";
 import { Footer } from "@/widgets/Footer";
 import { monoplex, pretendard, ridibatang } from "@/app/styles/font";
 import { cn } from "@/shared/lib/shadcn-utils";
-import ResponsiveBody from "@/shared/components/Responsive/Body";
 import { Toaster } from "@/shared/components/ui/sonner";
 import NextTopLoader from "nextjs-toploader";
+import PageLayout from "@/shared/components/Layout/PageLayout";
 
 export const metadata: Metadata = {
   title: "cutehammond.dev",
@@ -35,23 +35,22 @@ export default async function Layout({ children }: React.PropsWithChildren) {
       className={cn(
         pretendard.variable,
         monoplex.variable,
-        ridibatang.variable
+        ridibatang.variable,
+        "scroll-smooth"
       )}
       suppressHydrationWarning
     >
-      <body>
+      <PageLayout>
         <JotaiProvider>
           <ThemeProvider>
             <Header />
-            <ResponsiveBody as="main" className="min-h-screen">
-              {children}
-            </ResponsiveBody>
+            {children}
             <Footer />
             <Toaster />
             <NextTopLoader showSpinner={false} color="#DB7406" />
           </ThemeProvider>
         </JotaiProvider>
-      </body>
+      </PageLayout>
     </html>
   );
 }

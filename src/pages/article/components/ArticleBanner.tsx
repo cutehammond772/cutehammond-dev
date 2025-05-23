@@ -1,3 +1,5 @@
+import { Clock } from "lucide-react";
+
 import { Badge } from "@/shared/components/ui/badge";
 import {
   Card,
@@ -6,10 +8,10 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card";
 import { convertDate } from "@/shared/lib/date";
-import Markdown from "@/shared/components/Markdown";
 import HStack from "@/shared/components/Container/HStack";
 import VStack from "@/shared/components/Container/VStack";
-import { Clock } from "lucide-react";
+import H1 from "@/shared/components/Primitive/H1";
+import Text from "@/shared/components/Primitive/Text";
 
 export default function ArticleBanner({
   tag,
@@ -24,16 +26,16 @@ export default function ArticleBanner({
     <Card>
       <CardHeader>
         <CardTitle>
-          <Markdown.h1>{title}</Markdown.h1>
+          <H1>{title}</H1>
         </CardTitle>
         <VStack as={CardDescription} gap={2}>
           <HStack gap={2} items="center">
-            <Clock className="h-4 w-4" />
-            <div className="text-foreground font-serif text-base">
+            <Clock size={16} />
+            <Text variant="muted">
               {convertDate(createdDate.toDateString())}
-            </div>
+            </Text>
           </HStack>
-          <HStack gap={2} items="center">
+          <HStack gap={2} items="center" wrap="wrap">
             {tag.map((tag) => (
               <Badge key={tag} variant="secondary">
                 {tag}
