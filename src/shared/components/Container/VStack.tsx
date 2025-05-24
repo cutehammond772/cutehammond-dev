@@ -37,15 +37,10 @@ const vstackVariants = cva("flex flex-col", {
       wrap: "flex-wrap",
       reverse: "flex-wrap-reverse",
     },
-    grow: {
-      true: "flex-grow",
-      false: "",
-    },
   },
   defaultVariants: {
     justify: "start",
     items: "stretch",
-    gap: 0,
     wrap: "nowrap",
   },
 });
@@ -60,17 +55,13 @@ export default function VStack<C extends React.ElementType = "div">({
   justify,
   gap,
   items,
-  grow,
   wrap,
   ...props
 }: PolymorphicComponentProps<C, Props>) {
   const Component = PolymorphicComponent ?? "div";
   return (
     <Component
-      className={cn(
-        vstackVariants({ justify, gap, items, grow, wrap }),
-        className
-      )}
+      className={cn(vstackVariants({ justify, gap, items, wrap }), className)}
       {...props}
     />
   );

@@ -11,18 +11,15 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col items-center gap-8 md:mt-12 md:grid md:grid-cols-[1fr_2fr] md:gap-12">
-      <div className="relative aspect-square w-1/2 md:w-full">
+    <VStack gap={8}>
+      <HStack gap={8}>
         <Image
           src="/hamster.png"
           alt=""
-          className="rounded-full object-cover"
-          fill
-          priority
-          sizes="(max-width: 768px) 128px, 256px"
+          className="rounded-full"
+          width={128}
+          height={128}
         />
-      </div>
-      <VStack justify="between" gap={8}>
         <VStack gap={4}>
           <H1>Jungheon Lee</H1>
           <Text>이정헌 / 2001.02.28</Text>
@@ -44,21 +41,21 @@ export default function HeroSection() {
             </Button>
           </HStack>
         </VStack>
-        <VStack gap={4} className="font-serif break-keep">
-          <Paragraph>
-            12살 때 우연히 접한 프로그래밍은 내게 새로운 세계를 열어주었습니다.
-          </Paragraph>
-          <Paragraph>
-            나의 코드로 상상을 현실로 만들어내는 과정에 매료되어 다양한 개발
-            분야를 탐색해왔고, 그 여정 속에서 프론트엔드 개발에 깊은 매력을
-            발견했습니다.
-          </Paragraph>
-          <Paragraph>
-            현실의 복잡한 문제를 기술로 깔끔하게 풀어내는 순간마다 느끼는
-            성취감이 저를 프론트엔드 엔지니어의 길로 이끌고 있습니다.
-          </Paragraph>
-        </VStack>
+      </HStack>
+      <VStack gap={4} className="font-serif break-keep">
+        <Paragraph>
+          12살 때 우연히 접한 프로그래밍은 내게 새로운 세계를 열어주었습니다.
+        </Paragraph>
+        <Paragraph>
+          나의 코드로 상상을 현실로 만들어내는 과정에 매료되어 다양한 개발
+          분야를 탐색해왔고, 그 여정 속에서 프론트엔드 개발에 깊은 매력을
+          발견했습니다.
+        </Paragraph>
+        <Paragraph>
+          현실의 복잡한 문제를 기술로 깔끔하게 풀어내는 순간마다 느끼는 성취감이
+          저를 프론트엔드 엔지니어의 길로 이끌고 있습니다.
+        </Paragraph>
       </VStack>
-    </div>
+    </VStack>
   );
 }

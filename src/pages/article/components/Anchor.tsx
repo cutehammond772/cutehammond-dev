@@ -19,6 +19,22 @@ function getIndent(depth: HeadingMeta["depth"]) {
   }
 }
 
+function BlurBottom() {
+  return (
+    <div className="to-background pointer-events-none sticky bottom-0 z-10 h-8 w-full bg-gradient-to-b from-transparent from-10%">
+      &nbsp;
+    </div>
+  );
+}
+
+function BlurTop() {
+  return (
+    <div className="from-background pointer-events-none sticky top-0 z-10 h-8 w-full bg-gradient-to-b from-10% to-transparent">
+      &nbsp;
+    </div>
+  );
+}
+
 export default async function Anchor({ mdxContent }: { mdxContent: string }) {
   const headings = await extractHeadings(mdxContent);
 
@@ -30,15 +46,14 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
   return (
     <VStack
       justify="center"
+      items="center"
       className="sticky top-0 hidden h-screen p-6 xl:flex"
     >
       <VStack
         items="start"
         className="relative max-h-128 max-w-90 overflow-x-hidden overflow-y-scroll"
       >
-        <div className="from-background pointer-events-none sticky top-0 z-10 h-8 w-full bg-gradient-to-b from-10% to-transparent">
-          &nbsp;
-        </div>
+        <BlurTop />
         {array.map((item) => {
           if (item % 2 === 0) {
             // 1. 짝수면 헤딩을 배치한다.
@@ -80,9 +95,7 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
             );
           }
         })}
-        <div className="to-background pointer-events-none sticky bottom-0 z-10 h-8 w-full bg-gradient-to-b from-transparent from-10%">
-          &nbsp;
-        </div>
+        <BlurBottom />
       </VStack>
     </VStack>
   );

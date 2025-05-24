@@ -29,7 +29,7 @@ async function Code({ codeblock }: { codeblock: RawCode }) {
             className="border-primary h-6 rounded-b-md border-x-4 border-b-4"
             style={highlighted.style}
           />
-          <HStack items="center" gap={2} grow>
+          <HStack items="center" gap={2} className="grow">
             <CopyButton content={highlighted.code}>
               <CodeTitle meta={highlighted.meta} lang={highlighted.lang} />
             </CopyButton>
