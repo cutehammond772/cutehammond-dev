@@ -47,12 +47,9 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
     <VStack
       justify="center"
       items="center"
-      className="sticky top-0 hidden h-screen p-6 xl:flex"
+      className="sticky top-0 ml-auto hidden h-screen max-w-64 p-4 xl:flex"
     >
-      <VStack
-        items="start"
-        className="relative max-h-128 max-w-90 overflow-x-hidden overflow-y-scroll"
-      >
+      <VStack items="start" className="relative max-h-128 overflow-y-auto">
         <BlurTop />
         {array.map((item) => {
           if (item % 2 === 0) {
@@ -64,14 +61,14 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
               <Link
                 href={`#${uniqueId}`}
                 key={uniqueId}
-                className={`${getIndent(heading.depth)} block shrink-0 self-stretch overflow-x-hidden`}
+                className={`${getIndent(heading.depth)} block shrink-0 self-stretch`}
               >
-                <HStack items="center" className="overflow-x-hidden">
-                  <Connection from={1} to={1} className="stroke-primary" />
+                <HStack className="relative">
+                  <Connection from={1} to={1} className="h-auto" />
                   <Text
                     size="sm"
                     variant="muted"
-                    className="inline-block overflow-x-hidden text-ellipsis whitespace-nowrap hover:underline"
+                    className="break-keep hover:underline"
                   >
                     {heading.content}
                   </Text>
