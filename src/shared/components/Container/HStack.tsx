@@ -31,6 +31,7 @@ const hstackVariants = cva("flex", {
       12: "gap-12",
       16: "gap-16",
       32: "gap-32",
+      64: "gap-64",
     },
     wrap: {
       nowrap: "flex-nowrap",
