@@ -7,7 +7,7 @@ type Props = VariantProps<typeof rightSideLayoutVariants> & {
 };
 
 const rightSideLayoutVariants = cva(
-  "col-span-1 col-start-3 row-span-3 row-start-1 relative"
+  "col-span-1 col-start-3 row-span-3 row-start-1 relative hidden xl:block"
 );
 
 export default function RightSideLayout<C extends React.ElementType = "aside">({
