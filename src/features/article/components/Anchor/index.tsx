@@ -1,14 +1,15 @@
 import Link from "next/link";
 
+import HStack from "@/shared/components/Container/HStack";
 import VStack from "@/shared/components/Container/VStack";
 import Text from "@/shared/components/Primitive/Text";
 import { generateId } from "@/shared/lib/anchor/id";
 import { extractHeadings } from "@/shared/lib/anchor/extractor";
 import { HeadingMeta } from "@/shared/lib/anchor/types";
-import Connection from "@/shared/components/Anchor/Connection";
-import HStack from "@/shared/components/Container/HStack";
 
-function getIndent(depth: HeadingMeta["depth"]) {
+import Connection from "./Connection";
+
+function indent(depth: HeadingMeta["depth"]) {
   switch (depth) {
     case 1:
       return "ml-0";
@@ -46,10 +47,14 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
   return (
     <VStack
       justify="center"
-      items="center"
-      className="sticky top-0 ml-auto hidden h-screen max-w-64 p-4 xl:flex"
+      items="start"
+      className="sticky top-0 mr-auto h-screen min-w-64 p-4"
     >
-      <VStack items="start" className="relative max-h-128 overflow-y-auto">
+      <VStack
+        items="start"
+        className="relative max-h-128 overflow-y-auto"
+        title="목차"
+      >
         <BlurTop />
         {array.map((item) => {
           if (item % 2 === 0) {
@@ -61,7 +66,7 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
               <Link
                 href={`#${uniqueId}`}
                 key={uniqueId}
-                className={`${getIndent(heading.depth)} block shrink-0 self-stretch`}
+                className={`${indent(heading.depth)} block shrink-0 self-stretch`}
               >
                 <HStack className="relative">
                   <Connection from={1} to={1} className="h-auto" />
