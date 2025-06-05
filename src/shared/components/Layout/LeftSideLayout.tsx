@@ -7,7 +7,7 @@ type Props = VariantProps<typeof leftSideLayoutVariants> & {
 };
 
 const leftSideLayoutVariants = cva(
-  "col-span-1 col-start-1 row-span-3 row-start-1 relative"
+  "col-span-1 col-start-1 row-span-3 row-start-1 relative hidden xl:block"
 );
 
 export default function LeftSideLayout<C extends React.ElementType = "aside">({

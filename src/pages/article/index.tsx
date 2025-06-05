@@ -1,12 +1,13 @@
-import { github } from "@/features/article/loaders";
 import { loader } from "@/shared/lib/loader";
 import MainLayout from "@/shared/components/Layout/MainLayout";
-import LeftSideLayout from "@/shared/components/Layout/LeftSideLayout";
+import ArticleCard from "@/features/article/components/ArticleCard";
+import ArticleContent from "@/features/article/components/ArticleContent";
+import Anchor from "@/features/article/components/Anchor";
+import { github } from "@/features/article/loaders";
 
-import ArticleBanner from "./components/ArticleBanner";
 import { ArticleParams } from "./types/article-params";
-import Anchor from "./components/Anchor";
-import ArticleContent from "./components/ArticleContent";
+import RightSideLayout from "@/shared/components/Layout/RightSideLayout";
+import ScrollProgress from "@/shared/components/ScrollProgress";
 
 export default async function ArticlePage(props: ArticleParams) {
   const { slug } = await props.params;
@@ -24,15 +25,12 @@ export default async function ArticlePage(props: ArticleParams) {
 
   return (
     <>
-      <LeftSideLayout>
+      <ScrollProgress />
+      <RightSideLayout>
         <Anchor mdxContent={article.content} />
-      </LeftSideLayout>
+      </RightSideLayout>
       <MainLayout>
-        <ArticleBanner
-          tag={article.tag}
-          createdDate={article.createdDate}
-          title={article.title}
-        />
+        <ArticleCard {...article} />
         <ArticleContent mdxContent={article.content} />
       </MainLayout>
     </>

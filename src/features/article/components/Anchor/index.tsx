@@ -1,14 +1,15 @@
 import Link from "next/link";
 
+import HStack from "@/shared/components/Container/HStack";
 import VStack from "@/shared/components/Container/VStack";
 import Text from "@/shared/components/Primitive/Text";
 import { generateId } from "@/shared/lib/anchor/id";
 import { extractHeadings } from "@/shared/lib/anchor/extractor";
 import { HeadingMeta } from "@/shared/lib/anchor/types";
-import Connection from "@/shared/components/Anchor/Connection";
-import HStack from "@/shared/components/Container/HStack";
 
-function getIndent(depth: HeadingMeta["depth"]) {
+import Connection from "./Connection";
+
+function indent(depth: HeadingMeta["depth"]) {
   switch (depth) {
     case 1:
       return "ml-0";
@@ -17,6 +18,22 @@ function getIndent(depth: HeadingMeta["depth"]) {
     case 3:
       return "ml-5";
   }
+}
+
+function BlurBottom() {
+  return (
+    <div className="to-background pointer-events-none sticky bottom-0 z-10 h-8 w-full bg-gradient-to-b from-transparent from-10%">
+      &nbsp;
+    </div>
+  );
+}
+
+function BlurTop() {
+  return (
+    <div className="from-background pointer-events-none sticky top-0 z-10 h-8 w-full bg-gradient-to-b from-10% to-transparent">
+      &nbsp;
+    </div>
+  );
 }
 
 export default async function Anchor({ mdxContent }: { mdxContent: string }) {
@@ -30,15 +47,15 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
   return (
     <VStack
       justify="center"
-      className="sticky top-0 hidden h-screen p-6 xl:flex"
+      items="start"
+      className="sticky top-0 mr-auto h-screen min-w-64 p-4"
     >
       <VStack
         items="start"
-        className="relative max-h-128 max-w-90 overflow-x-hidden overflow-y-scroll"
+        className="relative max-h-128 overflow-y-auto"
+        title="목차"
       >
-        <div className="from-background pointer-events-none sticky top-0 z-10 h-8 w-full bg-gradient-to-b from-10% to-transparent">
-          &nbsp;
-        </div>
+        <BlurTop />
         {array.map((item) => {
           if (item % 2 === 0) {
             // 1. 짝수면 헤딩을 배치한다.
@@ -49,14 +66,14 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
               <Link
                 href={`#${uniqueId}`}
                 key={uniqueId}
-                className={`${getIndent(heading.depth)} block shrink-0 self-stretch overflow-x-hidden`}
+                className={`${indent(heading.depth)} block shrink-0 self-stretch`}
               >
-                <HStack items="center" className="overflow-x-hidden">
-                  <Connection from={1} to={1} className="stroke-primary" />
+                <HStack className="relative">
+                  <Connection from={1} to={1} className="h-auto" />
                   <Text
                     size="sm"
                     variant="muted"
-                    className="inline-block overflow-x-hidden text-ellipsis whitespace-nowrap hover:underline"
+                    className="break-keep hover:underline"
                   >
                     {heading.content}
                   </Text>
@@ -80,9 +97,7 @@ export default async function Anchor({ mdxContent }: { mdxContent: string }) {
             );
           }
         })}
-        <div className="to-background pointer-events-none sticky bottom-0 z-10 h-8 w-full bg-gradient-to-b from-transparent from-10%">
-          &nbsp;
-        </div>
+        <BlurBottom />
       </VStack>
     </VStack>
   );

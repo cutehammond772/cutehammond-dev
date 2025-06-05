@@ -31,21 +31,17 @@ const hstackVariants = cva("flex", {
       12: "gap-12",
       16: "gap-16",
       32: "gap-32",
+      64: "gap-64",
     },
     wrap: {
       nowrap: "flex-nowrap",
       wrap: "flex-wrap",
       reverse: "flex-wrap-reverse",
     },
-    grow: {
-      true: "flex-grow",
-      false: "",
-    },
   },
   defaultVariants: {
     justify: "start",
     items: "stretch",
-    gap: 0,
     wrap: "nowrap",
   },
 });
@@ -60,17 +56,13 @@ export default function HStack<C extends React.ElementType = "div">({
   justify,
   gap,
   items,
-  grow,
   wrap,
   ...props
 }: PolymorphicComponentProps<C, Props>) {
   const Component = PolymorphicComponent ?? "div";
   return (
     <Component
-      className={cn(
-        hstackVariants({ justify, gap, items, grow, wrap }),
-        className
-      )}
+      className={cn(hstackVariants({ justify, gap, items, wrap }), className)}
       {...props}
     />
   );

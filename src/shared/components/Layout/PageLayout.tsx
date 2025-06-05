@@ -7,7 +7,7 @@ type Props = VariantProps<typeof pageLayoutVariants> & {
 };
 
 const pageLayoutVariants = cva(
-  "grid md:grid-cols-[1fr_768px_1fr] grid-rows-[auto_1fr_auto] min-h-screen"
+  "grid md:grid-cols-[1fr_768px_1fr] grid-rows-[auto_1fr_auto] min-h-screen gap-y-32"
 );
 
 export default function PageLayout<C extends React.ElementType = "body">({

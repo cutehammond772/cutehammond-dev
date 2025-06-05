@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/lib/shadcn-utils";
 import { PolymorphicComponentProps } from "@/shared/types/polymorphic-component";
 
-const paragraphVariants = cva("text-base leading-loose break-keep", {
+const paragraphVariants = cva("text-base break-keep", {
   variants: {
     font: {
       mono: "font-mono",

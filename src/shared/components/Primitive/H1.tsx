@@ -3,7 +3,7 @@ import { cn } from "@/shared/lib/shadcn-utils";
 import { PolymorphicComponentProps } from "@/shared/types/polymorphic-component";
 
 const h1Variants = cva(
-  "font-sans tracking-tight text-foreground text-2xl font-bold md:text-3xl"
+  "font-sans tracking-tight text-foreground text-2xl font-semibold md:text-3xl"
 );
 
 type Props = VariantProps<typeof h1Variants> & {
